@@ -1,1 +1,311 @@
+/* ==========================
+   TubeGenius AI
+   Global Styles
+========================== */
 
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+
+background:
+radial-gradient(circle at top right,#1f4eff22,transparent 45%),
+linear-gradient(135deg,#05070d,#0b1220,#111827);
+
+color:#fff;
+
+min-height:100vh;
+
+overflow-x:hidden;
+
+}
+
+/* ==========================
+   NAVBAR
+========================== */
+
+header{
+
+width:100%;
+
+padding:20px 8%;
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+z-index:1000;
+
+backdrop-filter:blur(16px);
+
+background:rgba(8,12,22,.55);
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.navbar{
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+}
+
+.logo{
+
+font-size:28px;
+
+font-weight:800;
+
+color:#4ea1ff;
+
+letter-spacing:.5px;
+
+}
+
+.nav-links{
+
+display:flex;
+
+list-style:none;
+
+gap:28px;
+
+}
+
+.nav-links a{
+
+text-decoration:none;
+
+color:#fff;
+
+font-weight:500;
+
+transition:.3s;
+
+}
+
+.nav-links a:hover{
+
+color:#4ea1ff;
+
+}
+
+.nav-buttons{
+
+display:flex;
+
+gap:15px;
+
+}
+
+.login-btn{
+
+padding:10px 22px;
+
+border:1px solid #4ea1ff;
+
+border-radius:50px;
+
+text-decoration:none;
+
+color:white;
+
+transition:.3s;
+
+}
+
+.login-btn:hover{
+
+background:#4ea1ff;
+
+}
+
+.start-btn{
+
+padding:10px 22px;
+
+background:#2563eb;
+
+border-radius:50px;
+
+text-decoration:none;
+
+color:white;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.start-btn:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 0 25px rgba(37,99,235,.5);
+
+}
+
+/* ==========================
+   HERO
+========================== */
+
+.hero{
+
+min-height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:120px 8% 60px;
+
+text-align:center;
+
+}
+
+.hero-content{
+
+max-width:850px;
+
+}
+
+.hero h1{
+
+font-size:64px;
+
+font-weight:800;
+
+line-height:1.1;
+
+margin-bottom:25px;
+
+}
+
+.hero p{
+
+font-size:20px;
+
+color:#c8d4e8;
+
+line-height:1.8;
+
+margin-bottom:40px;
+
+}
+
+.hero-buttons{
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+.primary-btn{
+
+background:#2563eb;
+
+padding:16px 34px;
+
+border-radius:50px;
+
+text-decoration:none;
+
+color:white;
+
+font-weight:700;
+
+transition:.35s;
+
+}
+
+.primary-btn:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 0 35px rgba(37,99,235,.55);
+
+}
+
+.secondary-btn{
+
+border:1px solid rgba(255,255,255,.25);
+
+padding:16px 34px;
+
+border-radius:50px;
+
+text-decoration:none;
+
+color:white;
+
+transition:.35s;
+
+}
+
+.secondary-btn:hover{
+
+background:rgba(255,255,255,.08);
+
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media(max-width:900px){
+
+.nav-links{
+
+display:none;
+
+}
+
+.hero h1{
+
+font-size:42px;
+
+}
+
+.hero p{
+
+font-size:17px;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
+.primary-btn,
+.secondary-btn{
+
+width:240px;
+
+text-align:center;
+
+}
+
+  }
