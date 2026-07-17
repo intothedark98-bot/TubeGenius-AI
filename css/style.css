@@ -60,18 +60,20 @@ align-items:center;
 justify-content:space-between;
 
 }
-
 .logo{
 
-font-size:28px;
+font-size:34px;
 
 font-weight:800;
 
 color:#4ea1ff;
 
-letter-spacing:.5px;
+letter-spacing:-1px;
+
+white-space:nowrap;
 
 }
+
 
 .nav-links{
 
