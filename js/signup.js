@@ -2,12 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const form = document.getElementById("signup-form");
 
-    if (!form) {
-        alert("signup-form not found!");
-        return;
-    }
-
     form.addEventListener("submit", async (e) => {
+
         e.preventDefault();
 
         const fullName = document.getElementById("fullname").value.trim();
@@ -33,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             if (!data.user) {
-                alert("Please check your email to verify your account.");
+                alert("Account created. Please verify your email.");
                 return;
             }
 
@@ -47,17 +43,19 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
 
             if (profileError) {
-                alert("Profile Error:\n" + profileError.message);
+                alert(profileError.message);
                 return;
             }
 
-            alert("Account created successfully!");
+            alert("🎉 Account created successfully!");
 
             window.location.href = "login.html";
 
-        } catch (err) {
+        }
+
+        catch (err) {
+            alert(err.message);
             console.error(err);
-            alert("Unexpected Error:\n" + err.message);
         }
 
     });
