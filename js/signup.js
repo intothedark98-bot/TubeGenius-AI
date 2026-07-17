@@ -20,7 +20,7 @@ form.addEventListener("submit", async (e) => {
 
     try {
         // Create user in Supabase Authentication
-        const { data, error } = await supabase.auth.signUp({
+        const { data, error } = await window.supabaseClient.auth.signUp({
             email: email,
             password: password
         });
@@ -35,8 +35,8 @@ form.addEventListener("submit", async (e) => {
         }
 
         // Insert profile into database
-        const { error: profileError } = await supabase
-            .from("profiles")
+        const { error: profileError } = await window.supabaseClient
+    .from("profiles")
             .insert([
                 {
                     id: user.id,
