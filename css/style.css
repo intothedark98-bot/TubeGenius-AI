@@ -589,3 +589,74 @@ transform:translate(0,0) scale(1);
 }
 
 }
+
+/* ==========================
+   PARTICLES
+========================== */
+
+.particles{
+
+position:absolute;
+
+width:100%;
+
+height:100%;
+
+overflow:hidden;
+
+}
+
+.particles span{
+
+position:absolute;
+
+width:5px;
+
+height:5px;
+
+background:#7dc8ff;
+
+border-radius:50%;
+
+opacity:.45;
+
+animation:particleFloat 14s linear infinite;
+
+}
+
+/* Positions */
+
+.particles span:nth-child(1){top:15%;left:12%;animation-delay:0s;}
+.particles span:nth-child(2){top:30%;left:75%;animation-delay:2s;}
+.particles span:nth-child(3){top:60%;left:18%;animation-delay:5s;}
+.particles span:nth-child(4){top:82%;left:55%;animation-delay:3s;}
+.particles span:nth-child(5){top:20%;left:48%;animation-delay:8s;}
+.particles span:nth-child(6){top:70%;left:82%;animation-delay:6s;}
+.particles span:nth-child(7){top:50%;left:92%;animation-delay:9s;}
+.particles span:nth-child(8){top:90%;left:28%;animation-delay:11s;}
+
+@keyframes particleFloat{
+
+0%{
+
+transform:translateY(0);
+
+opacity:.2;
+
+}
+
+50%{
+
+opacity:.8;
+
+}
+
+100%{
+
+transform:translateY(-80px);
+
+opacity:0;
+
+}
+
+}
