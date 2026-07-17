@@ -1,4 +1,7 @@
 // Get the signup form
+console.log("window.supabase =", window.supabase);
+console.log("supabase =", supabase);
+console.log("supabase.auth =", supabase?.auth);
 const form = document.getElementById("signup-form");
 
 form.addEventListener("submit", async (e) => {
