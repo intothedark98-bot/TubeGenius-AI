@@ -396,6 +396,7 @@ padding:55px;
 
 font-size:42px;
 
+
 }
 
 .login-card h2{
@@ -403,5 +404,50 @@ font-size:42px;
 font-size:34px;
 
 }
+
+}
+.google-btn{
+
+width:100%;
+
+padding:16px;
+
+border-radius:14px;
+
+background:white;
+
+color:#111827;
+
+font-weight:700;
+
+border:none;
+
+cursor:pointer;
+
+transition:.3s;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:12px;
+
+}
+
+.google-btn img{
+
+width:24px;
+
+height:24px;
+
+}
+
+.google-btn:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 10px 30px rgba(255,255,255,.25);
 
 }
