@@ -451,3 +451,43 @@ transform:translateY(-3px);
 box-shadow:0 10px 30px rgba(255,255,255,.25);
 
 }
+
+footer{
+
+position:fixed;
+
+bottom:20px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+font-size:13px;
+
+color:#9fb4d3;
+
+display:flex;
+
+gap:18px;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+text-align:center;
+
+opacity:.8;
+
+}
+
+footer span{
+
+cursor:pointer;
+
+}
+
+footer span:hover{
+
+color:white;
+
+}
