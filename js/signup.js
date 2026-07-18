@@ -1,12 +1,13 @@
-alert(typeof supabase);
-alert(typeof supabase.auth);
-
 document.addEventListener("DOMContentLoaded", () => {
 
     const form = document.getElementById("signup-form");
 
-    form.addEventListener("submit", async (e) => {
+    if (!form) {
+        alert("Signup form not found.");
+        return;
+    }
 
+    form.addEventListener("submit", async (e) => {
         e.preventDefault();
 
         const fullName = document.getElementById("fullname").value.trim();
@@ -20,17 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         try {
-alert("typeof supabase = " + typeof supabase);
 
-alert("supabase = " + JSON.stringify(supabase));
-
-alert("typeof supabase.auth = " + typeof supabase.auth);
-
-alert("typeof supabase.auth.signUp = " + typeof supabase.auth?.signUp);
-
-            alert("supabase: " + typeof supabase);
-alert("auth: " + typeof supabase.auth);
-            
             const { data, error } = await supabase.auth.signUp({
                 email,
                 password
@@ -41,15 +32,17 @@ alert("auth: " + typeof supabase.auth);
                 return;
             }
 
-            if (!data.user) {
-                alert("Account created. Please verify your email.");
+            const user = data.user;
+
+            if (!user) {
+                alert("Please verify your email before logging in.");
                 return;
             }
 
             const { error: profileError } = await supabase
                 .from("profiles")
                 .insert({
-                    id: data.user.id,
+                    id: user.id,
                     full_name: fullName,
                     plan: "Free",
                     videos_used: 0
@@ -64,11 +57,9 @@ alert("auth: " + typeof supabase.auth);
 
             window.location.href = "login.html";
 
-        }
-
-        catch (err) {
-            alert(err.message);
+        } catch (err) {
             console.error(err);
+            alert("Unexpected Error: " + err.message);
         }
 
     });
