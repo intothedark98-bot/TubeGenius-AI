@@ -7,4 +7,4 @@ const supabase = window.supabase.createClient(
   SUPABASE_ANON_KEY
 );
 console.log("Supabase client:", supabase);
-alert(typeof supabase);
+throw new Error("CONFIG.JS IS LOADING");
