@@ -27,6 +27,10 @@ alert("supabase = " + JSON.stringify(supabase));
 alert("typeof supabase.auth = " + typeof supabase.auth);
 
 alert("typeof supabase.auth.signUp = " + typeof supabase.auth?.signUp);
+
+            alert("supabase: " + typeof supabase);
+alert("auth: " + typeof supabase.auth);
+            
             const { data, error } = await supabase.auth.signUp({
                 email,
                 password
