@@ -17,7 +17,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         try {
+alert("typeof supabase = " + typeof supabase);
 
+alert("supabase = " + JSON.stringify(supabase));
+
+alert("typeof supabase.auth = " + typeof supabase.auth);
+
+alert("typeof supabase.auth.signUp = " + typeof supabase.auth?.signUp);
             const { data, error } = await supabase.auth.signUp({
                 email,
                 password
