@@ -1,3 +1,6 @@
+alert(typeof supabase);
+alert(typeof supabase.auth);
+
 document.addEventListener("DOMContentLoaded", () => {
 
     const form = document.getElementById("signup-form");
