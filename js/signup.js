@@ -23,8 +23,10 @@ document.addEventListener("DOMContentLoaded", () => {
         try {
 
             const { data, error } = await window.supabaseClient.auth.signUp({
-                password
-            });
+    email,
+    password
+});
+        
 
             if (error) {
                 alert(error.message);
