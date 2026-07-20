@@ -234,94 +234,156 @@ transform:translateY(0);
   }
 
 /* ==========================================
-           OPTIMIZE PAGE
+        TUBEGENIUS AI STUDIO
 ========================================== */
 
-.optimize-card{
+.studio{
 
-    max-width:900px;
-    margin:40px auto;
-    background:#111827;
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:24px;
-    padding:40px;
-    box-shadow:0 15px 40px rgba(0,0,0,.35);
+    display:grid;
+    grid-template-columns:420px 1fr;
+    gap:30px;
+    margin-top:30px;
+    align-items:start;
 
 }
 
-.optimize-card h1{
+/* LEFT PANEL */
 
-    font-size:34px;
+.studio-left{
+
+    background:#111827;
+    border-radius:24px;
+    padding:30px;
+    border:1px solid rgba(255,255,255,.08);
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+
+}
+
+.studio-left h2{
+
     color:#fff;
     margin-bottom:10px;
 
 }
 
-.optimize-card p{
+.studio-left p{
 
     color:#9ca3af;
-    margin-bottom:35px;
-    font-size:16px;
+    margin-bottom:30px;
+    line-height:1.6;
 
 }
 
-.optimize-card form{
+#optimize-form{
 
     display:flex;
     flex-direction:column;
-    gap:20px;
+    gap:18px;
 
 }
 
-.optimize-card label{
+#optimize-form label{
 
     color:#fff;
     font-weight:600;
-    font-size:15px;
 
 }
 
-.optimize-card input,
-.optimize-card select{
+#optimize-form input,
+#optimize-form select{
 
-    width:100%;
-    padding:16px 18px;
+    background:#1f2937;
+    color:white;
     border:none;
     outline:none;
     border-radius:14px;
-    background:#1f2937;
-    color:#fff;
-    font-size:16px;
+    padding:16px;
+    font-size:15px;
     transition:.3s;
 
 }
 
-.optimize-card input:focus,
-.optimize-card select:focus{
+#optimize-form input:focus,
+#optimize-form select:focus{
 
-    border:1px solid #6d5dfc;
-    box-shadow:0 0 18px rgba(109,93,252,.4);
+    box-shadow:0 0 0 2px #7c3aed;
 
 }
 
-.optimize-card button{
+#optimize-form button{
 
-    margin-top:15px;
+    margin-top:10px;
     padding:18px;
     border:none;
     border-radius:16px;
     background:linear-gradient(135deg,#6d5dfc,#8b5cf6);
-    color:#fff;
-    font-size:17px;
+    color:white;
+    font-size:16px;
     font-weight:700;
     cursor:pointer;
     transition:.3s;
 
 }
 
-.optimize-card button:hover{
+#optimize-form button:hover{
 
-    transform:translateY(-2px);
-    box-shadow:0 10px 30px rgba(109,93,252,.45);
+    transform:translateY(-3px);
 
 }
+
+/* RIGHT PANEL */
+
+.studio-right{
+
+    background:#111827;
+    border-radius:24px;
+    border:1px solid rgba(255,255,255,.08);
+    min-height:720px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px;
+
+}
+
+.workspace{
+
+    text-align:center;
+    max-width:500px;
+
+}
+
+.workspace-icon{
+
+    font-size:70px;
+    margin-bottom:20px;
+
+}
+
+.workspace h2{
+
+    color:white;
+    font-size:34px;
+    margin-bottom:15px;
+
+}
+
+.workspace p{
+
+    color:#9ca3af;
+    line-height:1.8;
+
+}
+
+.workspace-text{
+
+    margin-top:30px;
+    font-size:17px;
+
+}
+
+.workspace strong{
+
+    color:#8b5cf6;
+
+    }
