@@ -1,4 +1,3 @@
-alert("Dashboard JS Loaded");
 document.addEventListener("DOMContentLoaded", async () => {
 
     const {
@@ -15,10 +14,13 @@ document.addEventListener("DOMContentLoaded", async () => {
     const user = session.user;
 
     const { data: profile, error } = await window.supabaseClient
-        .from("profiles")
-        .select("*")
-        .eq("id", user.id)
-        .single();
+    .from("profiles")
+    .select("*")
+    .eq("id", user.id)
+    .single();
+
+alert("Profile: " + JSON.stringify(profile));
+alert("Error: " + JSON.stringify(error));
 
     if (error) {
 
