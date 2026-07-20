@@ -1,1 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Optimize Video - TubeGenius AI</title>
+
+    <link rel="stylesheet" href="css/dashboard.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            🚀 TubeGenius AI
+        </div>
+
+        <nav>
+
+            <a href="dashboard.html"><i class="fa-solid fa-house"></i> Dashboard</a>
+
+            <a href="optimize.html" class="active"><i class="fa-solid fa-wand-magic-sparkles"></i> Optimize</a>
+
+            <a href="#"><i class="fa-solid fa-chart-line"></i> Analytics</a>
+
+            <a href="#"><i class="fa-solid fa-clock-rotate-left"></i> History</a>
+
+            <a href="#"><i class="fa-solid fa-crown"></i> Pricing</a>
+
+            <a href="#"><i class="fa-solid fa-gear"></i> Settings</a>
+
+            <a href="#"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+
+        </nav>
+
+    </aside>
+
+    <!-- Main Content -->
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <h2>🚀 Optimize Video</h2>
+
+        </header>
+
+        <section class="optimize-card">
+
+            <h1>TubeGenius AI Optimizer</h1>
+
+            <p>Generate high-converting YouTube content in seconds.</p>
+
+            <form id="optimize-form">
+
+                <label>Video Topic</label>
+
+                <input
+                    type="text"
+                    id="topic"
+                    placeholder="e.g. How I Gained 100K Subscribers"
+                    required>
+
+                <label>Category</label>
+
+                <select id="category">
+                    <option>Education</option>
+                    <option>Gaming</option>
+                    <option>Technology</option>
+                    <option>Entertainment</option>
+                    <option>Finance</option>
+                    <option>Lifestyle</option>
+                </select>
+
+                <label>Target Audience</label>
+
+                <select id="audience">
+                    <option>Beginners</option>
+                    <option>Intermediate</option>
+                    <option>Advanced</option>
+                </select>
+
+                <label>Language</label>
+
+                <select id="language">
+                    <option>English</option>
+                    <option>Hindi</option>
+                </select>
+
+                <button type="submit">
+                    🚀 Generate Optimization
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js"></script>
+
+</body>
+
+                  </html>
