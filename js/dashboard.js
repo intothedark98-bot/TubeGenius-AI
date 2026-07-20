@@ -19,8 +19,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     .eq("id", user.id)
     .single();
 
-alert("Profile: " + JSON.stringify(profile));
-alert("Error: " + JSON.stringify(error));
+
 
     if (error) {
 
