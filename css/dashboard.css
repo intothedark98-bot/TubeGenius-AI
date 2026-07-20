@@ -339,10 +339,11 @@ transform:translateY(0);
     border-radius:24px;
     border:1px solid rgba(255,255,255,.08);
     min-height:720px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:40px;
+    padding:35px;
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+    overflow-y:auto;
+
+
 
 }
 
@@ -387,3 +388,88 @@ transform:translateY(0);
     color:#8b5cf6;
 
     }
+
+/* ==========================================
+        AI WORKSPACE
+========================================== */
+
+.workspace-empty{
+
+    width:100%;
+    text-align:center;
+
+}
+
+.workspace-results{
+
+    display:none;
+    width:100%;
+
+}
+
+.result-card{
+
+    background:#1f2937;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    padding:22px;
+    margin-bottom:22px;
+    transition:.3s;
+    box-shadow:0 8px 25px rgba(0,0,0,.15);
+
+}
+
+.result-card:hover{
+
+    transform:translateY(-4px);
+    box-shadow:0 18px 40px rgba(0,0,0,.25);
+    border-color:#7c3aed;
+
+}
+
+.result-top{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:18px;
+
+}
+
+.result-top h3{
+
+    color:#fff;
+    font-size:18px;
+    margin:0;
+
+}
+
+.result-card p{
+
+    color:#d1d5db;
+    line-height:1.8;
+    font-size:15px;
+    margin:0;
+
+}
+
+.copy-btn{
+
+    background:rgba(124,58,237,.12);
+    color:#b794f6;
+    border:1px solid rgba(124,58,237,.35);
+    padding:10px 18px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s;
+    font-weight:600;
+
+}
+
+.copy-btn:hover{
+
+    background:#7c3aed;
+    color:#fff;
+    transform:scale(1.05);
+
+}
