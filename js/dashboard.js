@@ -1,3 +1,4 @@
+alert("Dashboard JS Loaded");
 document.addEventListener("DOMContentLoaded", async () => {
 
     const {
