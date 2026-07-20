@@ -473,3 +473,24 @@ transform:translateY(0);
     transform:scale(1.05);
 
 }
+
+/* ==========================================
+        RESPONSIVE STUDIO
+========================================== */
+
+@media (max-width: 1200px){
+
+    .studio{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .studio-right{
+
+        margin-top:25px;
+        min-height:500px;
+
+    }
+
+}
