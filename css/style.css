@@ -645,6 +645,24 @@ opacity:.2;
 
 opacity:.8;
 
+   .footer{
+    margin-top:80px;
+    padding:25px;
+    text-align:center;
+    color:#9ca3af;
+    font-size:15px;
+    border-top:1px solid rgba(255,255,255,0.08);
+}
+
+.footer span{
+    color:#8b5cf6;
+    font-weight:700;
+}
+
+.footer:hover{
+    color:#ffffff;
+    transition:0.3s;
+   }
 }
 
 100%{
