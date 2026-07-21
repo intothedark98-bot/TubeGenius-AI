@@ -48,6 +48,8 @@ form.addEventListener("submit", async (e) => {
         console.log("API Response:", data);
 
         loadingBox.style.display = "none";
+        document.querySelector(".workspace-empty").style.display = "none";
+document.querySelector(".workspace-results").style.display = "block";
 
         if (data.error) {
             alert(data.error);
