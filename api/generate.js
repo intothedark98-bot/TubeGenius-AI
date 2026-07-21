@@ -59,7 +59,12 @@ Return ONLY JSON.
 
     const content = groq.choices[0].message.content;
 
-    const ai = JSON.parse(content);
+const clean = content
+  .replace(/```json/g, "")
+  .replace(/```/g, "")
+  .trim();
+
+const ai = JSON.parse(clean);
 
     return res.status(200).json(ai);
 
