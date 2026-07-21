@@ -8,3 +8,23 @@ form.addEventListener("submit", function(e){
     loadingBox.style.display = "block";
 
 });
+
+const loadingItems = document.querySelectorAll(".loading-box li");
+
+let currentStep = 0;
+
+setInterval(() => {
+
+    loadingItems.forEach(item => {
+        item.classList.remove("active");
+    });
+
+    loadingItems[currentStep].classList.add("active");
+
+    currentStep++;
+
+    if(currentStep >= loadingItems.length){
+        currentStep = 0;
+    }
+
+},700);
