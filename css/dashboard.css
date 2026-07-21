@@ -567,10 +567,28 @@ transform:translateY(0);
 
     }
 
+
     100%{
 
         width:100%;
 
     }
+
+}
+
+.loading-box li{
+
+    color:#7c7f8a;
+    margin:12px 0;
+    transition:all .35s ease;
+
+}
+
+.loading-box li.active{
+
+    color:#ffffff;
+    font-weight:600;
+    transform:translateX(8px);
+    text-shadow:0 0 12px rgba(124,58,237,.8);
 
 }
