@@ -45,6 +45,7 @@ form.addEventListener("submit", async (e) => {
         });
 
         const data = await response.json();
+        console.log("API Response:", data);
 
         loadingBox.style.display = "none";
 
