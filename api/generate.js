@@ -7,7 +7,7 @@ export default async function handler(req, res) {
     const { topic, category, audience, language } = req.body;
 
     const prompt = `
-You are TubeGenius AI.
+You are TubeGenius AI, an expert YouTube SEO strategist.
 
 Return ONLY valid JSON.
 
@@ -23,10 +23,26 @@ Category: ${category}
 Audience: ${audience}
 Language: ${language}
 
-Generate:
-- One viral YouTube title
-- One SEO description
-- 15 comma-separated tags
+Requirements:
+
+- Generate one highly clickable, professional YouTube title.
+- Write a detailed SEO-friendly description (200-300 words).
+- Use emojis naturally in the description.
+- Include a call to action asking viewers to Like, Comment and Subscribe.
+- - Generate 15 SEO-optimized comma-separated YouTube tags.
+- After the tags, leave one blank line and then generate 5 relevant hashtags.
+- Format exactly like this:
+
+minecraft,minecraft tips,survival,minecraft tutorial,...
+
+#minecraft #gaming #survival #minecrafttips #gamingcommunity
+- Generate a detailed thumbnail prompt describing:
+  • the main subject
+  • bright, vibrant colors
+  • cinematic lighting
+  • realistic style
+  • high click-through-rate design
+  • space for large thumbnail text
 
 Return ONLY JSON.
 `;
