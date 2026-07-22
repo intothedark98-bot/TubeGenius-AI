@@ -66,6 +66,9 @@ const clean = content
   .trim();
 
 const ai = JSON.parse(clean);
+    const thumbnail =
+  "https://image.pollinations.ai/prompt/" +
+  encodeURIComponent(ai.thumbnail_prompt);
 
     return res.status(200).json(ai);
 
