@@ -14,7 +14,8 @@ Return ONLY valid JSON.
 {
   "title": "",
   "description": "",
-  "tags": ""
+  "tags": "",
+  "thumbnail_prompt": ""
 }
 
 Topic: ${topic}
