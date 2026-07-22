@@ -126,10 +126,30 @@ Requirements:
       });
     }
 
-    const thumbnail =
-      "https://image.pollinations.ai/prompt/" +
-      encodeURIComponent(ai.thumbnail_prompt);
+    const thumbnailPrompt = `
+Professional YouTube thumbnail for "${topic}".
 
+Main subject: ${topic}
+
+Style:
+- Modern YouTube thumbnail
+- Ultra realistic
+- Vibrant colors
+- Cinematic lighting
+- High contrast
+- Sharp details
+- 16:9 composition
+- Eye-catching
+- Clean background
+- Space for large title text
+- No watermark
+- No logos
+- No random people unless the topic specifically requires people
+`;
+
+const thumbnail =
+  "https://image.pollinations.ai/prompt/" +
+  encodeURIComponent(thumbnailPrompt);
     return res.status(200).json({
       title: ai.title,
       description: ai.description,
