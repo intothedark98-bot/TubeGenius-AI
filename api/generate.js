@@ -31,11 +31,9 @@ Requirements:
 - Include a call to action asking viewers to Like, Comment and Subscribe.
 - - Generate 15 SEO-optimized comma-separated YouTube tags.
 - After the tags, leave one blank line and then generate 5 relevant hashtags.
-- Format exactly like this:
-
-minecraft,minecraft tips,survival,minecraft tutorial,...
-
-#minecraft #gaming #survival #minecrafttips #gamingcommunity
+- Generate exactly 15 relevant hashtags.
+- Return them space-separated like this:
+#hashtag1 #hashtag2 #hashtag3 #hashtag4 ...
 - Generate a detailed thumbnail prompt describing:
   • the main subject
   • bright, vibrant colors
