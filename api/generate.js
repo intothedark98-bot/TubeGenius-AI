@@ -99,9 +99,7 @@ try {
     error: e.message
   });
 }
-    const thumbnail =
-  "https://image.pollinations.ai/prompt/" +
-  encodeURIComponent(ai.thumbnail_prompt);
+    
 
     return res.status(200).json({
     title: ai.title,
