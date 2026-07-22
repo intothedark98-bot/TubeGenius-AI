@@ -70,8 +70,13 @@ const ai = JSON.parse(clean);
   "https://image.pollinations.ai/prompt/" +
   encodeURIComponent(ai.thumbnail_prompt);
 
-    return res.status(200).json(ai);
-
+    return res.status(200).json({
+    title: ai.title,
+    description: ai.description,
+    tags: ai.tags,
+    thumbnail: thumbnail
+});
+    
   } catch (err) {
     return res.status(500).json({
       error: err.message
