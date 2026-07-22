@@ -79,7 +79,26 @@ const clean = content
   .replace(/```/g, "")
   .trim();
 
-const ai = JSON.parse(clean);
+try {
+  const ai = JSON.parse(clean);
+
+  const thumbnail =
+    "https://image.pollinations.ai/prompt/" +
+    encodeURIComponent(ai.thumbnail_prompt);
+
+  return res.status(200).json({
+    title: ai.title,
+    description: ai.description,
+    tags: ai.tags,
+    thumbnail: thumbnail
+  });
+
+} catch (e) {
+  return res.status(500).json({
+    raw: clean,
+    error: e.message
+  });
+}
     const thumbnail =
   "https://image.pollinations.ai/prompt/" +
   encodeURIComponent(ai.thumbnail_prompt);
