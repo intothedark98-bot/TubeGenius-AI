@@ -1,15 +1,23 @@
 export default async function handler(req, res) {
   if (req.method !== "POST") {
-    return res.status(405).json({ error: "Method not allowed" });
+    return res.status(405).json({
+      error: "Method not allowed"
+    });
   }
 
   try {
     const { topic, category, audience, language } = req.body;
 
     const prompt = `
-You are TubeGenius AI, an expert YouTube SEO strategist.
+You are TubeGenius AI, a world-class YouTube SEO expert.
 
+IMPORTANT:
 Return ONLY valid JSON.
+Do NOT include markdown.
+Do NOT include explanation.
+Do NOT wrap the JSON inside \`\`\`.
+
+Return exactly this format:
 
 {
   "title": "",
@@ -18,31 +26,47 @@ Return ONLY valid JSON.
   "thumbnail_prompt": ""
 }
 
-Topic: ${topic}
+Video Topic: ${topic}
 Category: ${category}
-Audience: ${audience}
+Target Audience: ${audience}
 Language: ${language}
 
 Requirements:
 
-- Generate one highly clickable, professional YouTube title.
-- Write a detailed SEO-friendly description (200-300 words).
-- Use emojis naturally in the description.
-- Include a call to action asking viewers to Like, Comment and Subscribe.
-- - Generate 15 SEO-optimized comma-separated YouTube tags.
-- After the tags, leave one blank line and then generate 5 relevant hashtags.
-- Generate exactly 15 relevant hashtags.
-- Return them space-separated like this:
-#hashtag1 #hashtag2 #hashtag3 #hashtag4 ...
-- Generate a detailed thumbnail prompt describing:
-  • the main subject
-  • bright, vibrant colors
-  • cinematic lighting
-  • realistic style
-  • high click-through-rate design
-  • space for large thumbnail text
+1. TITLE
+- Highly clickable
+- Professional
+- Curiosity driven
+- Maximum 80 characters
 
-Return ONLY JSON.
+2. DESCRIPTION
+- 250-350 words
+- SEO optimized
+- Natural emojis
+- Well formatted
+- End with:
+👍 Like
+💬 Comment
+🔔 Subscribe
+
+3. TAGS
+Generate exactly 15 hashtags separated by spaces.
+
+Example:
+#minecraft #gaming #tips #survival
+
+4. THUMBNAIL_PROMPT
+Generate a highly detailed prompt for an AI image.
+
+Requirements:
+- Bright vibrant colors
+- Modern YouTube thumbnail
+- Cinematic lighting
+- One main subject
+- High contrast
+- Realistic
+- Eye-catching
+- Leave space for bold text
 `;
 
     const response = await fetch(
@@ -50,18 +74,18 @@ Return ONLY JSON.
       {
         method: "POST",
         headers: {
-          "Authorization": `Bearer ${process.env.GROQ_API_KEY}`,
+          Authorization: `Bearer ${process.env.GROQ_API_KEY}`,
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
           model: "llama-3.3-70b-versatile",
+          temperature: 0.8,
           messages: [
             {
               role: "user",
               content: prompt
             }
-          ],
-          temperature: 0.7
+          ]
         })
       }
     );
@@ -72,45 +96,50 @@ Return ONLY JSON.
       return res.status(500).json(groq);
     }
 
-    const content = groq.choices[0].message.content;
+    let content = groq.choices[0].message.content;
 
-const clean = content
-  .replace(/```json/g, "")
-  .replace(/```/g, "")
-  .trim();
+    content = content
+      .replace(/```json/g, "")
+      .replace(/```/g, "")
+      .trim();
 
-try {
-  const ai = JSON.parse(clean);
+    const start = content.indexOf("{");
+    const end = content.lastIndexOf("}");
 
-  const thumbnail =
-    "https://image.pollinations.ai/prompt/" +
-    encodeURIComponent(ai.thumbnail_prompt);
+    if (start === -1 || end === -1) {
+      return res.status(500).json({
+        error: "AI did not return valid JSON.",
+        raw: content
+      });
+    }
 
-  return res.status(200).json({
-    title: ai.title,
-    description: ai.description,
-    tags: ai.tags,
-    thumbnail: thumbnail
-  });
+    const json = content.substring(start, end + 1);
 
-} catch (e) {
-  return res.status(500).json({
-    raw: clean,
-    error: e.message
-  });
-}
-    
+    let ai;
+
+    try {
+      ai = JSON.parse(json);
+    } catch (e) {
+      return res.status(500).json({
+        error: "Failed to parse AI JSON.",
+        raw: json
+      });
+    }
+
+    const thumbnail =
+      "https://image.pollinations.ai/prompt/" +
+      encodeURIComponent(ai.thumbnail_prompt);
 
     return res.status(200).json({
-    title: ai.title,
-    description: ai.description,
-    tags: ai.tags,
-    thumbnail: thumbnail
-});
-    
+      title: ai.title,
+      description: ai.description,
+      tags: ai.tags,
+      thumbnail: thumbnail
+    });
+
   } catch (err) {
     return res.status(500).json({
       error: err.message
     });
   }
-}
+      }
