@@ -126,9 +126,7 @@ Requirements:
       });
     }
 
-    const thumbnailPrompt = `
-Professional YouTube thumbnail for "${topic}".
-
+    
 const thumbnailPrompt = `
 Professional YouTube thumbnail about ${topic}.
 
@@ -182,4 +180,4 @@ const thumbnail =
       error: err.message
     });
   }
-      }
+      
