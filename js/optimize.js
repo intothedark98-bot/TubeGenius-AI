@@ -77,6 +77,12 @@ document.querySelector(".workspace-results").style.display = "block";
             alert(data.error);
             return;
         }
+        await supabaseClient
+    .from("profiles")
+    .update({
+        videos_used: profile.videos_used + 1
+    })
+    .eq("id", user.id);
 
         titleResult.textContent = data.title;
         descriptionResult.textContent = data.description;
