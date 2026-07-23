@@ -22,6 +22,28 @@ setInterval(() => {
 
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
+    const { data: { user } } = await supabaseClient.auth.getUser();
+
+if (!user) {
+    alert("Please log in first.");
+    return;
+}
+
+const { data: profile, error } = await supabaseClient
+    .from("profiles")
+    .select("plan, videos_used")
+    .eq("id", user.id)
+    .single();
+
+if (error) {
+    alert("Couldn't load your profile.");
+    return;
+}
+
+if (profile.plan === "free" && profile.videos_used >= 3) {
+    alert("🚫 You've reached your free limit of 3 optimizations. Upgrade to Pro for unlimited access.");
+    return;
+}
 
     loadingBox.style.display = "block";
 
