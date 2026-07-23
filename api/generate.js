@@ -129,24 +129,43 @@ Requirements:
     const thumbnailPrompt = `
 Professional YouTube thumbnail for "${topic}".
 
-Main subject: ${topic}
+const thumbnailPrompt = `
+Professional YouTube thumbnail about ${topic}.
 
-Style:
-- Modern YouTube thumbnail
-- Ultra realistic
-- Vibrant colors
-- Cinematic lighting
-- High contrast
-- Sharp details
-- 16:9 composition
-- Eye-catching
-- Clean background
-- Space for large title text
-- No watermark
-- No logos
-- No random people unless the topic specifically requires people
+Ultra realistic.
+
+High quality.
+
+Modern YouTube style.
+
+Main subject must be ${topic}.
+
+Vibrant colors.
+
+Cinematic lighting.
+
+High contrast.
+
+Sharp focus.
+
+Dynamic composition.
+
+No watermark.
+
+No logo.
+
+No text.
+
+No unrelated people.
+
+16:9 aspect ratio.
+
+Extremely detailed.
+
+Photorealistic.
+
+Trending YouTube thumbnail.
 `;
-
 const thumbnail =
   "https://image.pollinations.ai/prompt/" +
   encodeURIComponent(thumbnailPrompt) +
