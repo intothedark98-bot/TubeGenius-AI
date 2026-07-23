@@ -149,7 +149,8 @@ Style:
 
 const thumbnail =
   "https://image.pollinations.ai/prompt/" +
-  encodeURIComponent(thumbnailPrompt);
+  encodeURIComponent(thumbnailPrompt) +
+  "?width=1280&height=720&model=flux&nologo=true&enhance=true";
     return res.status(200).json({
       title: ai.title,
       description: ai.description,
